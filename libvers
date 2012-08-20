@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Modules with version numbers:"
+finddep version | cut -d":" -f3 | sort | uniq

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# == 2 ]; then
+  for f in `isgit`; do
+    pushd $f > /dev/null;
+    setver $f $1 $2;
+    popd $f > /dev/null;
+  done;
+else
+  echo "Usage: setver_all MODULE VERSION";
+fi

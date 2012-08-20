@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# == 1 ]; then
+   grep $1 -rin */*.make | grep projects\\\[ | grep version;
+elif [ $# == 2 ]; then
+     grep $1 -rin */*.make | grep projects\\\[ | grep $2;
+elif [ $# == 0 ]; then
+     echo "Usage: $0 PROJECT [PARAMETER]";
+     echo "  PARAMETER defaults to version";
+fi
