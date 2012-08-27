@@ -2,6 +2,7 @@
 
 for f in `isgit`; do
     pushd $f > /dev/null
+    echo -n $f": "
     git checkout $1
     popd > /dev/null
 done
