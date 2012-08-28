@@ -2,6 +2,6 @@
 
 for f in `isgit`; do
     pushd $f > /dev/null
-    echo "$f : $(git branch --list | grep '\*' | cut -d' ' -f2)";
+    echo "$f : $(git branch -a | grep '\*' | cut -d' ' -f2)";
     popd > /dev/null
 done
