@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $# == 2 ]; then
+  for f in `isgit`; do
+    #if [ -d $f ]; then echo $f; else echo "BULL"; fi
+      echo "$f : $PWD"
+    pushd $f > /dev/null;
+    tag2branch $f $1 $2;
+    popd > /dev/null;
+  done;
+else
+  echo "Usage: tag2branch_all MODULE VERSION";
+fi
